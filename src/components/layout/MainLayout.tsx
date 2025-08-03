@@ -1,20 +1,38 @@
-import { Layout, Menu } from 'antd';
-import React from 'react';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { Layout, Menu, type MenuProps } from 'antd';
+import { Outlet } from 'react-router-dom';
+
 
 const MainLayout = () => {
     const { Header, Content, Footer, Sider } = Layout;
-    const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-  (icon, index) => ({
-    key: String(index + 1),
-    icon: React.createElement(icon),
-    label: `nav ${index + 1}`,
-  }),
-);
+    const items: MenuProps['items'] = [
+        {
+            key: '1',
+            label: "Dashboard",
+        },
+        {
+            key: '2',
+            label: "Profile"
+        },
+        {
+            key: '11',
+            label: 'UserManagement',
+            children:[
+                 {
+            key: '12',
+            label: 'Create Admin',
+        },
+        {
+            key: '13',
+            label: 'Create Student'
+        },
+
+            ]
+        }
+    ]
 
     return (
         <div>
-             <Layout>
+             <Layout style={{ height: '100vh' }}>
       <Sider
         breakpoint="lg"
         collapsedWidth="0"
@@ -25,7 +43,9 @@ const MainLayout = () => {
           console.log(collapsed, type);
         }}
       >
-        <div className="demo-logo-vertical" />
+        <div>
+            <p style={{color: "white", textAlign: "center", height: '2rem', fontSize: '24px', marginTop: '5px'}}>Ph University</p>
+        </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
       </Sider>
       <Layout>
@@ -39,7 +59,9 @@ const MainLayout = () => {
             }}
           >
 
-            <h1>The main content should go here </h1>
+            {/* <h1>The main content should go here </h1> */}
+
+            <Outlet />
             
           </div>
         </Content>
