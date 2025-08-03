@@ -6,7 +6,9 @@ import Register from "../pages/Register";
 import About from "../pages/About";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateStudent from "../pages/admin/CreateStudent";
-import AdminLayout from "../components/layout/AdminLayout";
+import CreateFaculty from "../pages/admin/CreateFaculty";
+import CreateAdmin from "../pages/admin/CreateAdmin";
+// import AdminLayout from "../components/layout/AdminLayout";
 
 const router = createBrowserRouter([
   {
@@ -30,17 +32,25 @@ const router = createBrowserRouter([
     element: <App />,
     // element: <AdminLayout />,
     children: [
-      {
-        index: true, 
-        element: <AdminDashboard />,
-      },
+    //   {
+    //     index: true, 
+    //     element: <AdminDashboard />,
+    //   },
       {
         path: "dashboard", 
         element: <AdminDashboard />,
       },
       {
-        path: "createStudent",
+        path: "create-student",
         element: <CreateStudent/>,
+      },
+      {
+        path: "create-admin",
+        element: <CreateAdmin/>,
+      },
+      {
+        path: "create-faculty",
+        element: <CreateFaculty/>,
       },
     ],
   },
