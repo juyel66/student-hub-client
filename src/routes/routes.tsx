@@ -4,8 +4,10 @@ import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import About from "../pages/About";
+import { adminPaths } from "./admin.routes";
+import { routesGenerators } from "../utils/routesGenerators";
 
-import {  adminRoutes } from "./admin.routes";
+
 // import AdminLayout from "../components/layout/AdminLayout";
 
 const router = createBrowserRouter([
@@ -29,19 +31,19 @@ const router = createBrowserRouter([
     path: "/admin",
     element: <App />,
     // element: <AdminLayout />,
-    children: adminRoutes
+    children: routesGenerators (adminPaths)
   },
   {
     path: "/faculty",
     element: <App />,
     // element: <AdminLayout />,
-    children: adminRoutes
+    children: routesGenerators (adminPaths)
   },
   {
     path: "/student",
     element: <App />,
     // element: <AdminLayout />,
-    children: adminRoutes
+    children: routesGenerators (adminPaths)
   },
 
 

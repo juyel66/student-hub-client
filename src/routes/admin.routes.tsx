@@ -1,21 +1,23 @@
-import type { ReactNode } from "react";
+
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateAdmin from "../pages/admin/CreateAdmin";
 import CreateFaculty from "../pages/admin/CreateFaculty";
 import CreateStudent from "../pages/admin/CreateStudent";
-import { NavLink } from "react-router-dom";
 
-type Trout =  {
-  path: string;
-  element: ReactNode;
-}
-type TSidebarItem = {
-  key: string;
-  label: ReactNode;
-  children?: TSidebarItem[]
-}
 
-const adminPaths = [
+// type Trout =  {
+//   path: string;
+//   element: ReactNode;
+// }
+
+
+// type TSidebarItem = {
+//   key: string;
+//   label: ReactNode;
+//   children?: TSidebarItem[]
+// }
+
+export const adminPaths = [
   {
     name: "Dashboard",
     path: "dashboard",
@@ -73,56 +75,62 @@ const adminPaths = [
 
 // Programmatically way 
 
-export const adminRoutes = adminPaths.reduce((acc : Trout[], item) => {
+
+
+
+
+// export const adminRoutes = adminPaths.reduce((acc : Trout[], item) => {
   
-  if (item.path && item.element) {
-    acc.push({
-      path: item.path,
-      element: item.element,
-    });
-  }
+//   if (item.path && item.element) {
+//     acc.push({
+//       path: item.path,
+//       element: item.element,
+//     });
+//   }
 
-  // Children handle (corrected 'children')
-  if (item.children) {
-    item.children.forEach((child) => {
-      if (child.path && child.element) {
-        acc.push({
-          path: child.path,
-          element: child.element,
-        });
-      }
-    });
-  }
+//   // Children handle (corrected 'children')
+//   if (item.children) {
+//     item.children.forEach((child) => {
+//       if (child.path && child.element) {
+//         acc.push({
+//           path: child.path,
+//           element: child.element,
+//         });
+//       }
+//     });
+//   }
 
-  return acc;
-}, []);
+//   return acc;
+// }, []);
 
-console.log(adminRoutes);
+// console.log(adminRoutes);
+
+
 
 
 
 // sidebar item 
 
-export const adminSidebarItem = adminPaths.reduce((acc: TSidebarItem[], item) => {
+// export const adminSidebarItem = adminPaths.reduce((acc: TSidebarItem[], item) => {
  
-  if (item.path && item.name) {
-    acc.push({
-      key: item.name,
-      label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>,
-    });
-  }
+//   if (item.path && item.name) {
+//     acc.push({
+//       key: item.name,
+//       label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>,
+//     });
+//   }
 
 
-  if (item.children) {
-  acc.push({
-    key: item.name,
-    label: item.name,
-    children: item.children.map((child) => ({
-      key: child.name,
-      label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
-    }))
-  })
-  }
+//   if (item.children) {
+//   acc.push({
+//     key: item.name,
+//     label: item.name,
+//     children: item.children.map((child) => ({
+//       key: child.name,
+//       label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
+//     }))
+//   })
+//   }
 
-  return acc;
-}, []);
+//   return acc;
+// }, []);
