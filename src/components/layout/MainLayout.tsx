@@ -50,9 +50,10 @@ const MainLayout = () => {
                 height: "2rem",
                 fontSize: "24px",
                 marginTop: "5px",
+                
               }}
             >
-              Ph University
+              Student Hub
             </p>
           </div>
           <Menu
