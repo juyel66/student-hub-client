@@ -1,9 +1,9 @@
-import React from 'react';
+
 
 const AdminDashboard = () => {
     return (
         <div>
-            This is a adminDhasboard page 
+            This is a admin dashboard page 
         </div>
     );
 };

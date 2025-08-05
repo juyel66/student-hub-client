@@ -1,10 +1,10 @@
-import { Layout, Menu,  } from "antd";
-import {  Outlet } from "react-router-dom";
-import { adminPaths } from "../../routes/admin.routes";
-import { sidebarItemGenerators } from "../../utils/sidebarItemGenerators";
+import { Layout } from "antd";
+import { Outlet } from "react-router-dom";
+
+import DashboardSidebar from "./DashboardSidebar";
 
 const MainLayout = () => {
-  const { Header, Content, Footer, Sider } = Layout;
+  const { Header, Content, Footer } = Layout;
   // const items: MenuProps["items"] = [
   //   {
   //     key: "Dashboard",
@@ -34,7 +34,7 @@ const MainLayout = () => {
   return (
     <div>
       <Layout style={{ height: "100vh" }}>
-        <Sider
+        {/* <Sider
           breakpoint="lg"
           collapsedWidth="0"
           onBreakpoint={(broken) => {
@@ -62,9 +62,12 @@ const MainLayout = () => {
             theme="dark"
             mode="inline"
             defaultSelectedKeys={["4"]}
-            items={sidebarItemGenerators(adminPaths, 'admin')}
+            items={sidebarItemGenerators(adminPaths, "admin")}
           />
-        </Sider>
+        </Sider> */}
+
+        <DashboardSidebar></DashboardSidebar>
+
         <Layout>
           <Header style={{ padding: 0 }} />
           <Content style={{ margin: "24px 16px 0" }}>

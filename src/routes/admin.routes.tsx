@@ -45,6 +45,8 @@ export const adminPaths = [
   },
 ];
 
+
+
 //====================Hard Coded way ====================
 
 // export const adminPaths = [
