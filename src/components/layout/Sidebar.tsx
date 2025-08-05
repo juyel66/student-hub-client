@@ -14,7 +14,7 @@ const userRole = {
 
 
 const DashboardSidebar = () => {
-    const role = "student";
+    const role = "faculty";
     let sidebarItems;
      switch (role) {
         case userRole.ADMIN:
